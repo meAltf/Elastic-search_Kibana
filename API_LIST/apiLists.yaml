@@ -1,0 +1,10 @@
+API:
+
+# GET RESPONSE OF API'S
+# Normal & details response
+- GET /_cluster/health
+- GET /_nodes
+
+#To get response in short
+- GET /_cat/health?v
+- GET /_cat/nodes?v
