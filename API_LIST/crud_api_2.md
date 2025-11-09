@@ -1,0 +1,50 @@
+DELETE /books
+
+PUT /books
+
+POST /books/_doc/1
+{
+  "title": "To Kill a Mockingbird",
+  "author": "Harper Lee",
+  "year": 1960,
+  "genre": "Fiction",
+  "rating": 4.9
+}
+
+POST /books/_doc/2
+{
+  "title": "1984",
+  "author": "George Orwell",
+  "year": 1949,
+  "genre": "Dystopian",
+  "rating": 4.8
+}
+
+POST /books/_doc/3
+{
+  "title": "The Great Gatsby",
+  "author": "F. Scott Fitzgerald",
+  "year": 1925,
+  "genre": "Fiction",
+  "rating": 4.7
+}
+
+POST /books/_doc/4
+{
+  "title": "Pride and Prejudice",
+  "author": "Jane Austen",
+  "year": 1813,
+  "genre": "Romance",
+  "rating": 4.6
+}
+
+# To get doc with id
+GET /books/_doc/2
+
+# query all
+GET /books/_search
+
+# To search with some keyword
+GET /books/_search?q=Lee
+GET /books/_search?q=fiction
+GET /books/_search?q=4.6
