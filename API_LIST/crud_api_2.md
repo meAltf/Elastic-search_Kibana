@@ -48,3 +48,25 @@ GET /books/_search
 GET /books/_search?q=Lee
 GET /books/_search?q=fiction
 GET /books/_search?q=4.6
+
+# To update a doc with ID.
+## POST will also work. PUT/POST will have the upsert behavior.
+
+POST /books/_doc/5
+{
+  "title": "Pride and Robert",
+  "author": "Robert Alataf",
+  "year": 2000,
+  "genre": "Hustle",
+  "rating": 4.9
+}
+
+GET /books/_doc/3
+
+# It will replace whole object with this one -> to update one field we need to give whole object again with PUT
+PUT /books/_doc/3
+{
+  "year": 1925
+}
+
+GET /books/_doc/3
