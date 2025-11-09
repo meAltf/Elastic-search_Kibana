@@ -66,7 +66,38 @@ GET /books/_doc/3
 # It will replace whole object with this one -> to update one field we need to give whole object again with PUT
 PUT /books/_doc/3
 {
-  "year": 1925
+  "year": 2002
 }
 
 GET /books/_doc/3
+
+# Patch
+# To update only specified field
+POST /books/_update/5
+{
+    "doc":{
+        "year": "2003",
+        "genre": "Hustle-2"
+    }
+}
+
+GET /books/_doc/3
+
+# noop
+## If same above query trying to apply again -> it will give result - "noop" | means no need to change it's already existed.
+POST /books/_update/5
+{
+    "doc":{
+        "year": "2003",
+        "genre": "Hustle-2"
+    }
+}
+
+
+# To add a new field
+POST /books/_update/5
+{
+    "doc": {
+        "price": "$200"
+    }
+}
