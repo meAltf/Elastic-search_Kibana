@@ -128,6 +128,37 @@ POST /books/_update/5
   }
 }
 
+## conditional update | query
+
+POST /books/_update/5
+{
+  "script" : {
+    "source": """
+      if(Integer.parseInt(ctx._source.year) > 2000){
+        ctx._source.price = 9999
+      } else {
+          ctx._source.price = 20
+        }
+    """
+  }
+}
+
+POST /books/_update/3
+{
+  "script" : {
+    "source": """
+    if(ctx._source.year < 1950){
+      ctx._source.price = 20
+    }else{
+      ctx._source.price = 15
+    }
+    """
+  }
+}
+
+# to see it's type
+GET /books/_mapping
+
 ## Use of upsert | if entry there-> update it & if not then make a new entry
 POST /books/_update/10
 {
