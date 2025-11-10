@@ -167,3 +167,10 @@ POST /books/_update/10
     },
     "doc_as_upsert": true
 }
+
+# DELETE
+## DELETE a doc
+DELETE /books/_doc/10
+
+## DELETE a index
+DELETE /books
