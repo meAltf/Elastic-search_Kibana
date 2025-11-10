@@ -174,3 +174,7 @@ DELETE /books/_doc/10
 
 ## DELETE a index
 DELETE /books
+
+
+## update won't happen immediately, It will takes some time, but to force the refresh immediately
+POST /books/_refresh
