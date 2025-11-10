@@ -101,3 +101,29 @@ POST /books/_update/5
         "price": "$200"
     }
 }
+
+
+## scripted update
+POST /books/_update/5
+{
+  "script": {
+    "source": "ctx._source.price = ctx._source.price + 1" 
+  }
+}
+
+POST /books/_update/5
+{
+  "script" : {
+    "source" : "ctx._source.price++"
+  }
+}
+
+POST /books/_update/5
+{
+  "script" : {
+    "source" : "ctx._source.price = ctx._source.price + params.value",
+    "params": {
+      "value": 45
+    }
+  }
+}
