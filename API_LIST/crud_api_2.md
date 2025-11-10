@@ -127,3 +127,12 @@ POST /books/_update/5
     }
   }
 }
+
+## Use of upsert | if entry there-> update it & if not then make a new entry
+POST /books/_update/10
+{
+    "doc": {
+      "price" : 999
+    },
+    "doc_as_upsert": true
+}
