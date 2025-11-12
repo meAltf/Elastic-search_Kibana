@@ -1,0 +1,6 @@
+- A primary shard and the corresponding replica shard will not be storred in the same instance/node.
+        - replica shard -> High availibility
+
+- Multiple primary shards of the same index can be stored in the same node/instnce.
+    - Primary shards -> Scaling
+    - multiple shards in the same node/instance
