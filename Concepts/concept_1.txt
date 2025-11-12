@@ -39,3 +39,12 @@
 - Each primary shard having their own replica shard in another node for backup data for high availibility.
 - if one of the primary shard got down then their own replica shard takes over as a primary shard.
 
+
+## Replica shard 
+
+- A primary shard and the corresponding replica shard will not be stored on the same instance/node.
+- Replica shards are exact copy of primary shards.
+    - They do not do the "indexing process". they just get the indexed data from primary shard.
+    - Once promoted to primary shard, then it will do the indexing process when documets are stored.
+- Replica shards can serve search requests (imagine AWS/GCP read replicas).
+    - It can increase search throughput.
