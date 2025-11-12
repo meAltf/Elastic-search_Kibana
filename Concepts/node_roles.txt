@@ -1,0 +1,47 @@
+## Node roles
+
+- In a cluster -> many nodes -> many indices -> each node having one or more roles based on the configuration provided.
+
+
+## master | treat as a winning MP in election
+
+- Treat as a election, means after electing by multiple node there will a MASTER node.
+- if somehow master node gets down, a new node will became master
+
+- It manages the cluster state and coordinates cluster-wide-ranges
+- Responsible for tasks like- creating/deleting indices, tracing node availibility, and managing shard allocation.
+
+
+## voting only | treat as all MP in election
+
+- Does not want to became master but can participate in election process
+- Some node in cluster are configured in such a way that they can participate in electing process
+
+
+## data
+
+- Stores data and handles indexing and search operations for the shards it hosts
+- That node needs Heavy on memory and disk usage
+- Data node can be Hot, Ward, Cold it based on how frequently it accessed
+- Hot means-> most recent & frequently accessed node and ward is less accessed and so on....
+
+
+## coordinating node
+
+- We will send the requests to these nodes. It route requests, distribute queries, and merge responses from shards.
+- for above work we should not rely on master node, need to create a new coordinating node to take care of that.
+- we can have a dedicated coordinating nodes in a large cluster.
+
+
+## ingest node
+
+- Process and tranfroms/improves data before indexing 
+- using ingest pipelines
+- Useful for data enrichments/improvement tasks-
+    - add user location based on IP
+
+
+
+NOTE:
+- by default any node can perform any roles.
+- to specify specifically role needs to use: node.rules: [....]
