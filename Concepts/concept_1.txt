@@ -1,0 +1,41 @@
+## cluster
+
+- A set of nodes of indices.
+- Horizontal scalling
+- Taking example of 4 primary shards(having data), but in a cluster we're having more than 10 shards with empty docuemts
+
+## sharding :
+
+- Process of splitting an index into smaller, more manageable units for scalling purpose. | Horizontal scalling
+- Each unit is referred as a "primary shard".
+- No, it's not same as segment.
+- Each shard is 1 lucene index.
+
+
+## segment :
+
+- It's like a bunch of documents not same as shards.
+- Each shard is 1 lucene index.
+- shard to segments done by lucene(apache lucene) for fast search/read & write.
+
+
+## Routing :
+
+- In which shard, should i store my documents? How do i know that ?
+- find the hashcode for routing key:
+- shard = hash(routing_key) % number_of_primary_shards | ( routing_key is _id )
+
+
+## scatter gather pattern
+
+- when you search a "keyword" that does not present in index document so that time it will follow scatter-gather pattern.
+- means that time request send to all shards, may be any docuemts contains related to that "keyword".
+- and then response will be aggregated and send to columns.
+
+
+## Replication
+
+- Replica shard for high availibility.
+- Each primary shard having their own replica shard in another node for backup data for high availibility.
+- if one of the primary shard got down then their own replica shard takes over as a primary shard.
+
