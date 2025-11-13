@@ -4,3 +4,8 @@
 - Multiple primary shards of the same index can be stored in the same node/instnce.
     - Primary shards -> Scaling
     - multiple shards in the same node/instance
+
+
+- Minimum 2 nodes required to make a cluster and to choose a master node.
+- Either you've to explictly needs to mention that this is single-node-cluster.
+- Bcz to make a node as master, atleast one more node should be there to vote.
