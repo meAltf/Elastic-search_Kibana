@@ -12,6 +12,7 @@ POST /my-index/_doc
         persistent - permanent (recommended)
         transient - temporary
 */
+
 GET /_cluster/settings
 
 # we can disable the auto index creation
