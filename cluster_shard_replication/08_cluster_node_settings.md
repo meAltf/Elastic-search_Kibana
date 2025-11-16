@@ -4,7 +4,7 @@ GET /_cat/indices/my-index?v
 # try to insert w/o creating an index
 POST /my-index/_doc
 {
-    "name": "vinoth"
+    "name": "robert"
 }
 
 /*
@@ -26,5 +26,5 @@ PUT /_cluster/settings
 # try to insert w/o creating an index
 POST /my-index1/_doc
 {
-    "name": "vinoth"
+    "name": "robert"
 }
