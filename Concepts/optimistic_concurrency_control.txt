@@ -1,0 +1,3 @@
+seq_no : it will increase when a document will modify
+
+primary_term : It will increase when primary shard fail over only.
