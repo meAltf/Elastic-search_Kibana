@@ -1,0 +1,15 @@
+# To have a demo with high availibility, takes 3 node up and running. Do configuration in docker-compose.yml
+
+- make one node down. [ docker compose stop "nodeName" ]
+- Elastic automatically assign a new node for a node that gets down if available with a delay of 1 minutes (default)
+- bcz it will re-try to connect with the same node before assigning to new one.
+- may be due to network glictch or something it's failing so it will wait for a minute before assigning another node.
+
+- But we can increase the delay time, by below property
+
+PUT _all/_settings
+{
+  "settings": {
+    "index.unassigned.node_left.delayed_timeout": "5m"
+  }
+}
