@@ -1,0 +1,7 @@
+How many primary shards should i create ?
+
+- It depends on your data sets and feature.
+- Max number of documents per shard is 2.1 billions.
+- A shard can handle 25-50 GB efficiently.
+- If u expecting high query or indexing rates, more primary shards can help distribute the load across the cluster.
+    - Too many shards will affect the cluster management/operations | Also cost will increase.
