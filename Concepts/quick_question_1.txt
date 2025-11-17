@@ -15,3 +15,11 @@ How many primary shards should i create ?
 - if not, we can't change, as it would affect the existing document indexed already.
 
 - If needed badly then needs to create new index with needed shards then migrate old one.
+
+
+
+3. How many Replica shards should i create ?
+
+- At least 1 for production environment.
+- How many data nodes are expected to be unavailable during maintainance.
+  - If N nodes, then create N replica shards.
