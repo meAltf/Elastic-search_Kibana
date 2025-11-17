@@ -40,3 +40,43 @@ POST /countries/_bulk
 
 # query all
 GET /my-index/_search
+
+
+## Demo -2 | Optimistic concurrency control / multiple indices
+
+# bulk insert
+POST /countries/_bulk
+{ "create" : { "_id": 1 } }
+{ "name" : "Dubai" }
+{ "create" : { "_id": 2 } }
+{ "name" : "Saudi Arabia" }
+{ "create" : { "_id": 3 } }
+{ "name" : "Iran" }
+
+# bulk update
+POST /countries/_bulk
+{ "update" : { "_id": 2, "if_seq_no": "1", "if_primary_term": "1" } }
+{ "doc": { "name" : "item2-updated" }}
+{ "update" : { "_id": 3, "if_seq_no": "2", "if_primary_term": "1" } }
+{ "doc": { "name" : "item3-updated" }}
+
+# query all
+GET /countries/_search
+
+# bulk insert
+POST /_bulk
+{ "create" : { "_index": "countries1", "_id": 1 } }
+{ "name" : "Dubai" }
+{ "create" : { "_index": "countries2", "_id": 2 } }
+{ "name" : "Saudi Arabia" }
+{ "create" : { "_index": "countries3", "_id": 3 } }
+{ "name" : "Iraq" }
+
+# query countries1
+GET /countries1/_search
+
+# query all indices
+GET /countries*/_search
+
+# delete all the indices
+DELETE /countries1,countries2,countries3
