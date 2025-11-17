@@ -5,3 +5,13 @@ How many primary shards should i create ?
 - A shard can handle 25-50 GB efficiently.
 - If u expecting high query or indexing rates, more primary shards can help distribute the load across the cluster.
     - Too many shards will affect the cluster management/operations | Also cost will increase.
+
+
+
+2. How to change my primary shard count ?
+
+- You can't do easily.
+- If index is empty then delete and re-create.
+- if not, we can't change, as it would affect the existing document indexed already.
+
+- If needed badly then needs to create new index with needed shards then migrate old one.
