@@ -1,0 +1,11 @@
+Batch operations :
+- Allows sending multiple document operations (index, update, delete) in one request.
+
+
+Efficiency :
+- Reduced the overhead of individual HTTP request for each operation.
+
+Error handling :
+- Supports partial success, where some operations might succeed while others fails.
+
+- type : application/x-ndjson [ newline delimited JSON]
