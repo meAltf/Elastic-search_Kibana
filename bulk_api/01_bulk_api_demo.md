@@ -80,3 +80,9 @@ GET /countries*/_search
 
 # delete all the indices
 DELETE /countries1,countries2,countries3
+
+
+# Demo -3 | file upload
+# go to location of bulk upload file and run the below command
+
+curl -XPOST "http://localhost:9201/products/_bulk?pretty" -H "Content-Type: application/x-ndjson" --data-binary @products-bulk-upload.ndjson
