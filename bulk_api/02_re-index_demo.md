@@ -115,3 +115,9 @@ GET /_cat/shards/new-person?v
 
 # delete indices
 DELETE /person,new-person
+
+
+
+## NOTE :
+# source index can accept multiple indices as list, like combine the 2 index and copy the data into new one.
+# 
