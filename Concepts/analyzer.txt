@@ -1,0 +1,27 @@
+# Analyzer
+- A component used for text analysis during indexing and searching of text fields.
+- It breaks down the text into tokens(terms) that can be searched frequently.
+
+ -- Documents -> analyzer (character filter, tokenizer, token filters) -> disk
+ -- text(search) -> analyzer -> disk
+
+
+ - If there is no text fields, the concept of an analyzer is not required.
+
+
+1. character filter :
+- It works is- removing, replacing or normalizing text. | pre-processing
+- ex: <b> Apple Iphone </b> -----> Apple Iphone
+
+2. Tokenizer :
+- After getting normalizing text , it will change text to terms
+- ex: Apple Iphone -------> ["Apple", "Iphone"]
+
+3. token filter :
+- after getting token it will do some processing on each & every token it received.
+- ex: ["Apple", "Iphone"]  --------> ["apple", "iphone"] 
+- here it transform from uppercase to lowercase
+
+
+NOTE: 
+- Analyzer does not change/modify the _source doc. It scans/extracts token from the doc for search.
