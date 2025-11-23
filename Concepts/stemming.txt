@@ -1,0 +1,4 @@
+# Stemming :
+
+- Text processing technique to reduce words to their root/base form.
+- Stemming is a language-dependent but often involved removing prefixes and suffixes from words.
