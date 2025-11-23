@@ -47,3 +47,50 @@ POST /_analyze
     "unique"
   ]
 }
+
+
+# Synonyms filter
+
+/*
+synonym filter
+
+couch / sofa
+child / kid
+car / automobile
+buy / purchase
+help / assist / support
+pc / personal computer
+travel / commute / journey
+mug / cup / tumbler
+*/    
+POST /_analyze
+{
+  "text": "10 Stylish Couch Ideas to Transform Your Living Room along with cup",
+  "tokenizer": "standard",
+  "filter": [
+    "lowercase",
+    {
+      "type": "synonym",
+      "synonyms": [
+        "couch, sofa",
+        "mug, cup, tumbler"
+      ]
+    }
+  ]
+}
+
+# synonym filter
+POST /_analyze
+{
+  "text": "Amazon Web Services offers cloud computing solutions for various needs. AWS provides tools for storage, computing power, and database management",
+  "tokenizer": "standard",
+  "filter": [
+    "lowercase",
+    {
+      "type": "synonym",
+      "synonyms": [
+        "amazon web services, amazon cloud => aws"
+      ]
+    }
+  ]
+}
