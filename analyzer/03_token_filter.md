@@ -110,3 +110,28 @@ POST /_analyze
     "stop"
   ]
 }
+
+# stemmer
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-stemmer-tokenfilter.html
+# porter stemmer - https://snowballstem.org/algorithms/porter/stemmer.html
+POST /_analyze
+{
+  "text": "I cooked dishes while sitting comfortably and listening to music in the kitchen.",
+  "tokenizer": "standard",
+  "filter": [
+    "lowercase",
+    "stemmer"
+  ]
+}
+
+POST /_analyze
+{
+  "text": "I cooked dishes while sitting comfortably and listening to music in the kitchen.",
+  "tokenizer": "standard",
+  "filter": [
+    {
+      "type": "stemmer",
+      "language": "english"
+    }
+  ]
+}
