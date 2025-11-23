@@ -1,0 +1,23 @@
+Data Mapping:
+- It is a process of defining how a document, and the fields it contains, are stored and indexed.
+- {name-> text, age->int, dob->date}
+
+
+- Mapping types:
+- Dynamic Mapping - Let elasticsearch figure it out
+- Explicit Mapping - let me do it myself
+
+
+- type : text:
+- So analyzer will do text analysis.
+
+
+- type : keyword:
+- Store the value as it is in inverted index.
+- Text analysis is skipped like dob, email, phoneNum these should be put inside keyword type.
+
+
+- typr : numeric:
+- Numeric fields are not analyzed.
+- They are stored in BKD(block k dimensional) tree | used to efficiently build range queries
+- for price, age, rating etc.
