@@ -1,0 +1,15 @@
+# Query DSL | Domain specific language
+
+- Elastic search provides Query DSL to query ElasticSearch.
+- similar to SQL in RDBMS
+- It's in JSON format
+
+- The endpoint for query: 
+GET /{index}/_search
+{
+    "QUERY":{
+
+    }
+}
+
+- You can use POST as well in place of GET.
