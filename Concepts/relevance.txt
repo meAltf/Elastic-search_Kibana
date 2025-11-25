@@ -1,0 +1,5 @@
+Relevance :
+
+- it means how well result will returned that matches user's intent. means priority/rank like that
+- Elastic search uses technique like term-frequency & document-frequency etc to calculate the Relevance of search results.
+- we also have ability to tweak the relevance score.
