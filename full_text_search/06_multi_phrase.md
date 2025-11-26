@@ -62,7 +62,7 @@ POST /articles/_search
     "match_phrase": {
       "content": {
         "query": "spring season",
-        "slop": 0
+        "slop": 3
       }
     }
   }
