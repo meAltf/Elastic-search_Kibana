@@ -105,6 +105,7 @@ POST /articles/_search
   }
 }
 
+# by default, match in "OR" so response includes both , either one , all
 POST /articles/_search
 {
   "query": {
@@ -114,7 +115,7 @@ POST /articles/_search
   }
 }
 
-# match all the given words
+# match all the given words | it includes the response where both words present
 POST /articles/_search
 {
   "query": {
