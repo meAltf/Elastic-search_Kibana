@@ -1,0 +1,9 @@
+# Multi-field mapping :
+
+- Storing a field with multiple different types.
+- This enables to perform different types of searches on the same data.
+
+ex-> 
+
+city : text- match, fuzinness, match phrase
+     : keyword- term, aggregation
