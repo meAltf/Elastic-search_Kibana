@@ -1,0 +1,42 @@
+# Leaf Vs Compound queries :
+
+# strict:
+- ids, term/terms, range, prefix,wildcard,regex
+- These queries match documents exactly based on the specified values. 
+- relevance score is 1 for all the records bcz as the result is binary(match or no match)
+
+
+# flexible:
+- match, multi match, match phrase
+- These queries account for uncertainity, partial matches, misspellings etc.
+- relevance score different.
+
+
+# Leaf queries:
+- ids, term/terms, range, prefix,wildcard,regex
+- match, multi match, match phrase  
+
+# compound queries:
+- Combining multiple leafe queries to make a complex query.
+
+
+# Bool query:
+- It combines multiple queries in a flexible way.
+- It has 4 clauses:
+    - filter
+    - must
+    - must_not
+    - should
+
+
+
+# Bool query | filter
+- Used to filter documents matching specific conditions.
+- It is idea for stric queries like ids, term, range etc.
+
+
+# must_not
+- NOT (filter) | logical NOT
+
+# must
+- filter + score
