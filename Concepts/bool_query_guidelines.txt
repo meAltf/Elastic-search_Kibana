@@ -1,0 +1,15 @@
+Bool query guidelines:
+
+step-1:
+- First keep all the queries/conditions inside "filter"
+
+step-2:
+- Move any "NOT" conditions to "must_not"
+
+step-3:
+- Move any "OR" conditions / preferences conditions to "should" 
+    - Either-or/good to have/optional
+
+step-4:
+- Move any text field queries to "must"(as we need score)
+    - match/multi_match
