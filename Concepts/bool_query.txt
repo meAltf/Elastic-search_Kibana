@@ -23,10 +23,10 @@
 # Bool query:
 - It combines multiple queries in a flexible way.
 - It has 4 clauses:
-    - filter
-    - must
-    - must_not
-    - should
+    - filter(AND)
+    - must(AND)
+    - must_not(NOT)
+    - should(OR)+score | Filter documents-> It depends
 
 
 
@@ -40,3 +40,7 @@
 
 # must
 - filter + score
+
+# should
+- Yes -> If no "must" or "filter" clauses are defined, the "should" clause filter documents(acts as a OR filters)
+- No, -> if "must" or "filter" clauses exists, the "should" doesn't filter documents , it's only add the score for relevance search
