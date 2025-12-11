@@ -1,0 +1,19 @@
+# Default responses are sorted by relevance score, means the response how relevant matched the search.
+
+## Needs to do sorting based on our own requirements
+- Prefer keyword/numeric/date fields for sorting
+- text field can not be used for sorting as they are analyzed and tokenized.
+    - If really required then use multi-field mapping
+        - product_name : text
+        - product_name.raw : keyword
+
+
+
+## MODE ##
+- Needs to use "mode", when you need to sort in a list of lists
+# When you have multiple values, then pick:
+- min
+- max
+- sum     ( for number types only)
+- average ( for number types only)
+- median  ( for number types only)
